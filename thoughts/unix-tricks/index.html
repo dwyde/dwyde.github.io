@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="David Wyde">
+   <title>Unix Tricks | David Wyde</title>
+
+   <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/css/screen.css" media="screen">
+   
+   <link rel="stylesheet" href="/static/css/syntax.css" media="screen">
+   
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">David Wyde</a></h1>
+    </header>
+
+    <nav>
+        <a href="/">Thoughts</a>
+        <a href="/projects/">Projects</a>
+        <a href="/chess/">Chess</a>
+        <a href="/about/">About</a>
+    </nav>
+
+    <div id="content">
+    <article>
+        <div id="title">Unix Tricks</div>
+        <p class="date">2013-12-24</p>
+        <p>Here are a few Unix command line tricks that I've learned recently.</p>
+
+<h1><code>... | vim -</code></h1>
+
+<p>Edit search results by piping text into <code>vim -</code> instead of <code>less</code>.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="s1">'127.0.0.1'</span> file.log | less
+<span class="nb">grep</span> <span class="s1">'127.0.0.1'</span> file.log | vim -</code></pre></figure>
+
+<h1><code>tr -s ' '</code></h1>
+<p>Squeeze consecutive spaces into a single space. Also works for other
+characters.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ps aux | <span class="nb">tr</span> <span class="nt">-s</span> <span class="s1">' '</span> | <span class="nb">cut</span> <span class="nt">-f1</span>,2,3 <span class="nt">-d</span><span class="s1">' '</span></code></pre></figure>
+
+<h1 id="grep--b-a"><code class="highlighter-rouge">grep -B/-A</code></h1>
+
+<p>Display lines before (<code class="highlighter-rouge">-B</code>) and after (<code class="highlighter-rouge">-A</code>) a matching line.</p>
+<p>I find these flags confusing, since they could be "Above" and "Below".</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="nt">-A3</span> <span class="s1">'&lt;Directory'</span> /etc/apache2/apache2.conf</code></pre></figure>
+
+
+    </article>
+    </div>
+
+  
+
+</body>
+</html>
+

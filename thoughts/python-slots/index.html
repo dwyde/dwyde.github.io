@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="David Wyde">
+   <title>Python Slots | David Wyde</title>
+
+   <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/css/screen.css" media="screen">
+   
+   <link rel="stylesheet" href="/static/css/syntax.css" media="screen">
+   
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">David Wyde</a></h1>
+    </header>
+
+    <nav>
+        <a href="/">Thoughts</a>
+        <a href="/projects/">Projects</a>
+        <a href="/chess/">Chess</a>
+        <a href="/about/">About</a>
+    </nav>
+
+    <div id="content">
+    <article>
+        <div id="title">Python Slots</div>
+        <p class="date">2014-03-24</p>
+        <p>Python has an intriguing feature called "slots".</p>
+
+<p>Ordinarily, every instance of a user-defined Python class has a
+<code class="highlighter-rouge">__dict__</code> attribute. This is a dictionary used to dynamically
+store attributes as key-value pairs.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">attr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span><span class="o">.</span><span class="n">__dict__</span> <span class="o">==</span> <span class="p">{</span><span class="s">'attr'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">__slots__</code> class attribute can be used to statically define
+available instance attributes, which by default removes the instance
+__dict__ altogether.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s">'b'</span><span class="p">]</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># =&gt; raises an AttributeError
+</span><span class="n">b</span><span class="o">.</span><span class="n">__dict__</span>  <span class="c1"># =&gt; raises an AttributeError</span></code></pre></figure>
+
+<p>The main reason to define __slots__ is to save memory. Every instance
+__dict__ takes up space; if all instance attribute names are known at
+class creation time, then there's no need to have an instance
+__dict__.</p>
+
+<p>One twist on __slots__ is that it's possible to explicitly define
+a __dict__ slot, which will lead to the instance dict being created
+after all.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s">'c'</span><span class="p">,</span> <span class="s">'__dict__'</span><span class="p">]</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">c</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span><span class="o">.</span><span class="n">__dict__</span> <span class="o">==</span> <span class="p">{</span><span class="s">'d'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span></code></pre></figure>
+
+<p>Note that the "d" attribute appears in the instance __dict__, but
+the "c" attribute does not.</p>
+
+<p>A final piece of background information is that slots accumulate
+through inheritance. A slot should be defined once per class hierarchy.</p>
+
+<h1 id="dont-believe-everything-you-read">Don't believe everything you read</h1>
+
+<p>The
+<a href="http://docs.python.org/2/reference/datamodel.html#slots">Python docs</a>
+say, "When inheriting from a class without __slots__, the __dict__
+attribute of that class will always be accessible, so a __slots__
+definition in the subclass is meaningless." The last statement is
+actually incorrect.</p>
+
+<p>I noticed this when using the
+<a href="https://pypi.python.org/pypi/Pympler">pympler</a> memory measurement
+tool. Python's standard library includes <code class="highlighter-rouge">sys.getsizeof</code>, but that
+doesn't count nested objects. We can see that Pympler provides
+more intuitive numbers (measurements taken on Python 2.7.5).</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">getsizeof</span>
+<span class="kn">from</span> <span class="nn">pympler.asizeof</span> <span class="kn">import</span> <span class="n">asizeof</span>
+
+<span class="n">getsizeof</span><span class="p">([])</span> <span class="o">==</span> <span class="mi">72</span>
+<span class="n">asizeof</span><span class="p">([])</span> <span class="o">==</span> <span class="mi">72</span>
+
+<span class="n">getsizeof</span><span class="p">([[]])</span> <span class="o">==</span> <span class="mi">80</span>
+<span class="n">asizeof</span><span class="p">([[]])</span> <span class="o">==</span> <span class="mi">152</span></code></pre></figure>
+
+<p>Now, the real test. <code class="highlighter-rouge">A</code> is a class without __slots__, and <code class="highlighter-rouge">B</code> is
+a subclass with a __slots__ definition. Do the __slots__ matter?</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pympler.asizeof</span> <span class="kn">import</span> <span class="n">asizeof</span>
+
+<span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s">'b'</span><span class="p">]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<span class="n">asizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">344</span>
+<span class="n">asizeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">408</span>
+
+<span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'f'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">asizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1376</span>
+<span class="n">asizeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">640</span></code></pre></figure>
+
+<p>An instance of the class with slots defined starts out slightly larger,
+presumably because it has storage allocated for attributes defined
+as slots. But after we set six attributes on each instance, the
+instance without __slots__ uses substantially more memory. Why's that?</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+
+<span class="n">asizeof</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1312</span>
+<span class="n">asizeof</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span> <span class="o">==</span> <span class="mi">504</span></code></pre></figure>
+
+<p>Python's <code class="highlighter-rouge">dict</code> objects resize after a certain number of key-value
+pairs are added. The first five resizes occur at 6, 22, 86, 342, and
+1366 elements (increase by alternating powers of 2: +16, +64, +256,
++1024).</p>
+
+<p>An instance of class <code class="highlighter-rouge">B</code> has only five elements in its dict, with one
+in special slots storage. The instance of <code class="highlighter-rouge">A</code> has six key-value pairs
+in its __dict__, which explains the large leap in memory consumption.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>So, perhaps there's a minor inaccuracy in the stellar Python
+documentation. In any case, I learned a lot in the lead-up to this post.</p>
+
+
+    </article>
+    </div>
+
+  
+
+</body>
+</html>
+

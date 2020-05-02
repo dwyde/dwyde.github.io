@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="David Wyde">
+   <title>Intro-to-Programming Outline | David Wyde</title>
+
+   <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/css/screen.css" media="screen">
+   
+   <link rel="stylesheet" href="/static/css/syntax.css" media="screen">
+   
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">David Wyde</a></h1>
+    </header>
+
+    <nav>
+        <a href="/">Thoughts</a>
+        <a href="/projects/">Projects</a>
+        <a href="/chess/">Chess</a>
+        <a href="/about/">About</a>
+    </nav>
+
+    <div id="content">
+    <article>
+        <div id="title">Intro-to-Programming Outline</div>
+        <p class="date">2012-12-23</p>
+        <p>This is a miscellaneous collection of notes about teaching programming to non-programmers.</p>
+
+<h1 id="existing-resources">Existing Resources</h1>
+
+<p>The first link is well-regarded, despite its intimidating title.</p>
+
+<ul>
+  <li>Zed Shaw's <a href="http://learnpythonthehardway.org/">Learn Python the Hard Way</a></li>
+  <li><a href="https://swcarpentry.github.io/python-novice-inflammation/">Software Carpentry</a></li>
+  <li><a href="https://www.khanacademy.org/cs/tutorials/programming-basics">Khan Academy</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+<ul>
+  <li>Computers: phones, netbooks, tablets, microwaves!</li>
+</ul>
+
+<h1 id="building-blocks">Building blocks</h1>
+<ul>
+  <li>Variables</li>
+  <li>Loops</li>
+  <li>Conditionals</li>
+  <li>Math</li>
+  <li>Functions</li>
+</ul>
+
+<h1 id="variables">Variables</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">age</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">'David'</span></code></pre></figure>
+
+<h1 id="loops">Loops</h1>
+<ul>
+  <li>For-each</li>
+  <li>While</li>
+  <li>C-style for: <code class="highlighter-rouge">for (i = 0; i &lt; 5; i++) {}</code></li>
+  <li>Do-while (aside)</li>
+</ul>
+
+<h1 id="conditional-expressions">Conditional expressions</h1>
+<ul>
+  <li>If</li>
+  <li>Switch-case</li>
+</ul>
+
+<h1 id="data-types">Data types</h1>
+<ul>
+  <li><code class="highlighter-rouge">int</code> vs. <code class="highlighter-rouge">float</code> vs. <code class="highlighter-rouge">char</code></li>
+  <li>Arrays, lists, and strings</li>
+  <li>C: terminate with <code class="highlighter-rouge">\0</code>, instead of passing around a count</li>
+  <li>Character sets and encodings: ASCII, Unicode</li>
+</ul>
+
+<h1 id="bits">Bits</h1>
+<ul>
+  <li>0 and 1</li>
+  <li>32-bit and 64-bit computers (architectures)</li>
+  <li>Year 2038 problem, vs. Y2K bug</li>
+</ul>
+
+<h1 id="languages">Languages</h1>
+<ul>
+  <li>Natural languages vs. formal languages</li>
+  <li>Aside: Turing completeness, and equivalent power of expression</li>
+  <li>Aside: Noam Chomsky</li>
+  <li>Machine code, vs. assembly, vs. higher-level languages</li>
+  <li>Tradeoffs of different languages</li>
+  <li>Larry Wall's <em>State of the Onion</em>: some things are convenient to say in a language</li>
+  <li>"Scripting languages" vs. "programming languages"</li>
+  <li>"Coding" vs. "programming"</li>
+  <li>Web vs. desktop vs. embedded: languages and programming (tradeoffs)</li>
+  <li>Standard libraries: "batteries included"</li>
+  <li>Compilers and interpreters: translation between languages</li>
+</ul>
+
+<h1 id="dont-repeat-yourself">Don't Repeat Yourself</h1>
+<ul>
+  <li>Functions, vs. copy-pasting code</li>
+  <li>Classes: associate functions with structured data and/or state</li>
+  <li>Syntactic sugar</li>
+</ul>
+
+<h1 id="security">Security</h1>
+<ul>
+  <li>SSL and HTTPS</li>
+  <li>Crypto: RSA encryption and big prime numbers</li>
+  <li>
+    <p>Vulnerabilities and exploits</p>
+
+    <ul>
+      <li>Debian OpenSSL + uninitialized memory (aside: open source security)</li>
+    </ul>
+  </li>
+  <li>0-days, and responsible disclosure</li>
+  <li>What is a bug?</li>
+  <li>Web browsers have limited filesystem access</li>
+</ul>
+
+<h1 id="portability">Portability</h1>
+<ul>
+  <li>Virtual machines</li>
+  <li>Operating systems</li>
+  <li>Assembly languages, architectures, and compilers</li>
+  <li>The web: abstract away the OS, but variation between browsers</li>
+</ul>
+
+<h1 id="standards">Standards</h1>
+<ul>
+  <li>Formal vs. informal conventions</li>
+  <li>ANSI, ISO</li>
+  <li>Language definitions: HTML, Python</li>
+  <li>Separation of "language specification" from "language implementation".</li>
+  <li>CPython2 and PyPy; Python 3; Jython; etc.</li>
+</ul>
+
+<h1 id="servers">Servers</h1>
+<ul>
+  <li>What is a server?</li>
+  <li>World wide web: HTTP requests/responses as plain text</li>
+  <li>Networks and the internet</li>
+  <li>DNS: the numbers underneath the internet</li>
+  <li>Protocols: HTTP, SMTP, FTP, XMPP, etc.</li>
+</ul>
+
+<h1 id="graphics">Graphics</h1>
+<ul>
+  <li>GUIs and toolkits</li>
+  <li>Color encodings; e.g., RGBA</li>
+  <li>Pixels: drawing to the screen</li>
+  <li>GPUs: 3D graphics, scientific computing, password cracking</li>
+</ul>
+
+<h1 id="text-vs-binary">Text vs. binary</h1>
+<ul>
+  <li>File formats, magic numbers</li>
+  <li>.txt, .doc, .docx, .exe, XML, JSON, PDF, …</li>
+  <li>Comparison: Unix vs. Windows</li>
+  <li>Linux kernel binary blobs (e.g., wireless drivers)</li>
+</ul>
+
+<h1 id="data-interchange-file-formats">Data interchange, file formats</h1>
+<ul>
+  <li>Binary compatibility</li>
+  <li>Windows vs. Linux vs. Mac</li>
+  <li>32-bit vs. 64-bit for a single OS</li>
+</ul>
+
+<h1 id="coding-style">Coding style</h1>
+<ul>
+  <li>Unix Philosophy: combine small, simple tools (pipes and input/output)</li>
+  <li>Monolithic, universal: Windows registry</li>
+</ul>
+
+<h1 id="databases">Databases</h1>
+<ul>
+  <li>What is a database?</li>
+  <li>Data integrity, normalization, foreign keys (Don't repeat yourself)</li>
+  <li>Relational, document, and graph databases: model your data</li>
+  <li>Flat file databases</li>
+  <li>Index to avoid linear searches: data structures</li>
+  <li>Store data sets that are too big for RAM</li>
+  <li>JSTOR</li>
+  <li>Database servers like MySQL and SQL Server: SQL standard and implementations</li>
+</ul>
+
+<h1 id="code-quality">Code quality</h1>
+<ul>
+  <li>Readibility</li>
+  <li>Maintainability</li>
+  <li>Refactoring vs. rewriting</li>
+  <li>Technical Debt</li>
+</ul>
+
+<h1 id="scientific-computing">Scientific computing</h1>
+<ul>
+  <li>Emphasis on get-things-done scripts, vs. "30-year enterprise"</li>
+  <li>Python, C, C++, Perl, shell, Java?</li>
+</ul>
+
+<h1 id="multi-tasking-computers">Multi-tasking computers</h1>
+<ul>
+  <li>Multiple cores and processors</li>
+  <li>Threading and multiprocessing</li>
+  <li>Context switching for CPUs</li>
+  <li>Vector and array operations: fast, optimized in hardware</li>
+</ul>
+
+<h1 id="different-kinds-of-memory">Different kinds of memory</h1>
+<ul>
+  <li>RAM is faster, but more expensive, than hard disks</li>
+  <li>Flash drives vs. hard disks</li>
+  <li>Storing and representing objects that are too big to fit into RAM (or HD)</li>
+</ul>
+
+<h1 id="algorithms-data-structures">Algorithms, Data Structures</h1>
+<ul>
+  <li>The math part of computer science</li>
+  <li>Real consequences for code: reduce CPU time or memory usage</li>
+  <li>Big-O notation</li>
+  <li>Often used heavily in interviews for developer jobs</li>
+</ul>
+
+<h1 id="computational-complexity--actual-performance">Computational complexity =&gt; actual performance</h1>
+<ul>
+  <li>Premature optimization, and diminishing returns</li>
+  <li>"Developer time" is a resource like CPU time, RAM, and hard drive space</li>
+  <li>Like Costco's obsessive optimization of toilet paper production costs.</li>
+  <li>Right tool for the job: when you have an optimization hammer, everything looks like a nail.</li>
+</ul>
+
+<h1 id="how-to-learn-on-your-own">How to learn on your own</h1>
+<ul>
+  <li>Know how to ask search engines like Google
+    <ul>
+      <li>site:google.com</li>
+      <li>this -that</li>
+      <li>"Once upon a time"</li>
+    </ul>
+  </li>
+  <li>Stack Overflow</li>
+  <li>Choose wisely when entering a rabbit hole</li>
+</ul>
+
+<h1 id="piracy-and-privacy">Piracy and privacy</h1>
+<ul>
+  <li>Cute title, don't remember what my point was going to be</li>
+</ul>
+
+<h1 id="the-cloud-buzzwords">The Cloud: buzzwords</h1>
+
+<h1 id="ads-pay-for-free-services-like-google-and-facebook">Ads pay for free services like Google and Facebook</h1>
+<ul>
+  <li>Targeted advertisements</li>
+  <li>Tracking cookies</li>
+  <li>Linking user profile information across services: Google Drive, Google Search, Gmail?</li>
+</ul>
+
+<h1 id="abstractions">Abstractions</h1>
+<ul>
+  <li>Easy to understand, and to use</li>
+  <li>Hide details that people don't want to know</li>
+  <li>Perl saying: make easy things easy, and hard things possible.</li>
+</ul>
+
+<h1 id="impedance-mismatch-ie-square-peg-in-a-round-hole">Impedance mismatch; i.e., square peg in a round hole</h1>
+<ul>
+  <li>MATLAB for GUIs</li>
+  <li>Strings in Fortran?</li>
+</ul>
+
+<h1 id="iphone-and-android-apps-and-app-development">iPhone and Android apps, and app development</h1>
+
+<h1 id="making-your-own-website">Making your own website</h1>
+<ul>
+  <li>Hosting</li>
+  <li>HTML/CSS files vs. WYSIWYG editors</li>
+</ul>
+
+<h1 id="latex-nice-looking-typography">LaTeX: nice-looking typography</h1>
+<ul>
+  <li>Resumes</li>
+  <li>Scientific papers</li>
+</ul>
+
+<h1 id="domain-specific-languages-slang-jargon-and-concise-representations">Domain-Specific Languages: slang, jargon, and concise representations</h1>
+
+<h1 id="embedded-languages-microsoft-excels-vba-visual-basic-for-applications">Embedded languages: Microsoft Excel's VBA (Visual Basic for Applications)</h1>
+
+<h1 id="filesystems">Filesystems</h1>
+<ul>
+  <li>Windows C drive, D drive</li>
+  <li>Unix mount points</li>
+  <li>Directory structure, and filesystem hierarchy/tree</li>
+  <li>NTFS, FAT, ext3, ext4, ZFS</li>
+</ul>
+
+<h1 id="computer-literacy">Computer literacy</h1>
+<ul>
+  <li>opening files</li>
+  <li>Command line arguments</li>
+  <li>Running out of RAM or hard drive space; "pegging" CPU</li>
+  <li>Task manager
+    <ul>
+      <li>Monitor resource usage</li>
+      <li>Kill processes</li>
+      <li>Start/stop services</li>
+    </ul>
+  </li>
+  <li>Windows fundamentals</li>
+  <li>Web/browser fundamentals</li>
+  <li>Email: clients and servers</li>
+  <li>Microsoft Word and Excel
+    <ul>
+      <li>The basics: cut-copy-paste, spellcheck, test formatting</li>
+      <li>Intermediate: outlines, keyboard shortcuts</li>
+    </ul>
+  </li>
+  <li>Networking: connect to wifi</li>
+</ul>
+
+<h1 id="intellectual-property-and-software-patents-technical-and-legal-issues">Intellectual property and software patents: technical and legal issues</h1>
+<ul>
+  <li>"Downloading"</li>
+  <li>Torrenting</li>
+  <li>MegaUpload</li>
+  <li>Napster and Limewire</li>
+</ul>
+
+<h1 id="os-services-daemons-and-local-servers">OS services, daemons, and local servers</h1>
+
+<h1 id="software-hardware-firmware">Software, hardware, firmware</h1>
+
+<h1 id="back-up-data-to-external-media-dropbox-google-drive">Back up data to external media: DropBox, Google Drive?</h1>
+
+<h1 id="user-permissions">User permissions</h1>
+<ul>
+  <li>read/write/execute</li>
+  <li>administrator privileges</li>
+  <li>authentication vs. authorization</li>
+  <li>Unix vs. Windows</li>
+</ul>
+
+<h1 id="multi-user-vs-multi-process">Multi-user vs. multi-process</h1>
+
+<h1 id="automation-re-run-experiments-for-free-simulations">Automation: re-run experiments "for free" (simulations)</h1>
+<ul>
+  <li>Double-check complicated computations with one click</li>
+</ul>
+
+<h1 id="separation-of-concerns">Separation of concerns</h1>
+<ul>
+  <li>Model-view-controller</li>
+  <li>Separate content from presentation (HTML/CSS, vs. JS)</li>
+</ul>
+
+<h1 id="programming-paradigms">Programming paradigms</h1>
+<ul>
+  <li>Procedural programming
+    <ul>
+      <li>Linear instructions (recipes)</li>
+      <li>Step 1. Do this; Step 2. Do that; …</li>
+    </ul>
+  </li>
+  <li>Object-oriented programming: associate functions with data, and call them "methods"</li>
+  <li>Functional programming: combine little pieces together - lambda calculus?</li>
+</ul>
+
+<h1 id="automated-tests-unit-integration-usability-tests">Automated tests: unit, integration, usability tests</h1>
+
+<h1 id="learning-and-using-legacy-tools-and-legacy-code">Learning and using legacy tools, and legacy code</h1>
+
+<h1 id="web-browsers">Web browsers</h1>
+
+<ul>
+  <li>
+    <p>HTTP status codes: 200, 301, 302, 400, 401, 403, 404, 500, etc.</p>
+
+    <ul>
+      <li>Magic numbers, conventions, and abstraction</li>
+    </ul>
+  </li>
+  <li>What information does your HTTP client send?
+    <ul>
+      <li>User Agent string</li>
+      <li>HTTP Cookies</li>
+      <li>Your IP iddress, and MAC address on smartphones?</li>
+    </ul>
+  </li>
+  <li>Browser cache: save bandwidth, HTTP 304</li>
+</ul>
+
+<h1 id="routers-packet-sniffing-wireless-passphrases-mac-filters">Routers: packet sniffing, wireless passphrases, MAC filters</h1>
+<h1 id="the-network-stack">The network stack</h1>
+<ul>
+  <li>Wires and switches</li>
+  <li>TCP/IP</li>
+  <li>WWW, compare <em>web</em> to <em>internet</em></li>
+  <li>DNS</li>
+  <li>HTTP text requests/responses</li>
+  <li>Servers</li>
+  <li>Browsers as specialized HTTP clients</li>
+</ul>
+
+<h1 id="operating-systems-kernels-and-userland">Operating systems, kernels, and userland</h1>
+<ul>
+  <li>Unix, UNIX, Linux, GNU/Linux</li>
+  <li>Windows, Mac OS X, BSD, Solaris</li>
+  <li>System calls</li>
+  <li>Funny anecdote: Unix <code class="highlighter-rouge">creat</code></li>
+</ul>
+
+<h1 id="what-happens-when-you-press-the-enter-key">What happens when you press the "Enter" key?</h1>
+<ul>
+  <li>Keycodes</li>
+  <li>Keyboard shortcuts</li>
+  <li>Different things seem to happen at a terminal prompt and in an HTML text field</li>
+</ul>
+
+<h1 id="cracking">Cracking</h1>
+<ul>
+  <li>OWASP Top 10</li>
+  <li>XSS, CSRF</li>
+  <li>Database injection</li>
+  <li>Buffer overflows</li>
+  <li>Metasploit; john the ripper; LOIC; MAC spoofing</li>
+  <li>Anonymous and Lulzsec</li>
+  <li>War games</li>
+  <li>Arms race: address-space randomization</li>
+  <li>White, gray, and black hats</li>
+  <li>0-days and money</li>
+</ul>
+
+<h1 id="security-updates-and-the-software-lifecycle">Security updates and the software lifecycle</h1>
+
+<h1 id="sharing-software">Sharing software</h1>
+<ul>
+  <li>Code: FTP, GitHub, Bitbucket, and Sourceforge</li>
+  <li>Pre-packaged: package managers, "app stores"</li>
+</ul>
+
+<h1 id="version-control-systems">Version control systems</h1>
+<ul>
+  <li>Diffs and patches, vs. full copies</li>
+  <li>Microsoft Word's "track changes"</li>
+  <li>CVS, SVN</li>
+  <li>git, mercurial</li>
+</ul>
+
+<h1 id="software-developer-literacy">Software developer literacy</h1>
+<ul>
+  <li>Understand the historical context in which a decision was made</li>
+  <li>Algorithms vs. heuristics, for humans and computers</li>
+  <li>Traditional approach to Intro CS: teach a variety of sorting algorithms
+    <ul>
+      <li>Most modern languages give you at least one by default</li>
+      <li>I'd rather focus on fundamental low-level constructs, and general principles</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="licensing">Licensing</h1>
+<ul>
+  <li>Free (as in freedom/beer): GPL, BSD/MIT/etc.</li>
+  <li>Proprietary code</li>
+  <li>Creative commons, for content</li>
+  <li>Anecdote: copyrighting <code class="highlighter-rouge">/bin/true</code> (an empty script)</li>
+</ul>
+
+<h1 id="miscellaneous">Miscellaneous</h1>
+<ul>
+  <li>Windows shortcut anecdote: .lnk challenge</li>
+</ul>
+
+
+    </article>
+    </div>
+
+  
+
+</body>
+</html>
+

@@ -1,0 +1,247 @@
+html {
+  background: #dedede;
+}
+
+body {
+  font-family:serif;
+  background:#fff;
+  margin:0;
+}
+
+body * {
+  line-height:120%;
+  font-size:2.5vmin;
+}
+
+
+header {
+  font-family:monospace;
+  background:#0084c5;
+  color:#fff;
+}
+
+header h1 {
+  padding:2rem;
+  margin:0;
+}
+
+header a, header a:hover {
+  font-size: 4rem;
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+}
+
+nav {
+  font-family:monospace;
+  background-color:#22325f;
+  padding: 0.5rem 0 1rem;
+}
+
+nav a {
+  font-size: 2.2vmin;
+  color:#fff;
+  border-bottom:1px dashed white;
+  margin: 0 2rem;
+}
+
+nav a:hover {
+  color:#fff;
+  border-bottom:1px solid white;
+  text-decoration:none;
+}
+
+#content {
+  color: #000;
+  background: #fff;
+  margin: 2rem;
+  padding-bottom: 1rem;
+}
+
+article {
+    max-width: 100rem;
+}
+
+article h1 {
+  color: #0084c5;
+}
+
+#title {
+  font-weight:bold;
+  color:#0084c5;
+  margin-bottom: 1rem;
+}
+
+.poetry {
+  white-space: pre-wrap;
+}
+
+article a {
+  text-decoration: underline;
+  color: blue;
+}
+
+article a:visited {
+  color:purple;
+}
+
+article li p {margin: 0}
+article li ul {
+  margin: 0 0 0 2.5rem;
+  padding: 0;
+}
+
+#research p {
+  margin-bottom:1rem
+}
+
+#listing {
+  list-style: none;
+  margin: 0;
+}
+
+#listing li {
+  margin: 0;
+}
+
+p, ul, ol {
+  padding:0;
+  margin: 1rem 0;
+}
+
+ul, ol {
+  margin-left:2.5rem;
+}
+
+div.quotation {
+  margin-bottom: 1rem;
+}
+
+div.quotation p {
+  margin-bottom: 0;
+}
+
+/* Blog post listing */
+ul.posts {
+  list-style-type:none;
+  margin: 0;
+}
+
+ul.posts li span {
+  font-family: monospace;
+  color: #888;
+}
+
+/* Code projects */
+#code-screenshot {
+  max-width:40%;
+  margin:0;
+  border:1px solid #888;
+
+}
+
+/* Software blogs */
+code, code * {
+  font-family:monospace;
+  font-size: 80%;
+  background-color:#f3f3f3;
+}
+
+code.language-python {
+  display:block;
+  padding:2px;
+}
+
+.video-container {
+  overflow:hidden;
+}
+
+iframe {
+  margin-top: 1rem;
+  width: 48rem;
+  height: 27rem;
+}
+
+code.python {
+  margin: 1rem 1.5rem 0;
+}
+
+article h1 code {
+  background:inherit;
+  border:none;
+}
+
+.inline-image {
+  max-width: 20%;
+  border: 1px solid #888;
+  vertical-align: bottom;
+  margin-right: 2rem;
+}
+
+.date {
+  color: #888;
+  margin-bottom: 0;
+}
+
+/* Projects */
+.project-blurbs {
+  margin-bottom: -1rem;
+}
+
+.project-blurbs a {
+  margin: 1rem 2rem 1rem 0;
+  display:inline-block;
+}
+
+.project-blurbs div {
+  background:#eee;
+  border: 1px solid #888;
+  padding: 2rem;
+  text-align:left;
+}
+
+.project-blurbs figure {
+  width: 24rem;
+  text-align:center;
+}
+
+.project-blurbs a figcaption {
+  text-decoration: underline;
+}
+
+.project-blurbs figure img {
+  border:1px solid #888;
+  width:24rem;
+  max-width: 450px;
+  margin-bottom: 2rem;
+}
+
+/* Chess styles */
+#chess-board {
+  float:left;
+  margin-left:1rem;
+}
+
+#chess-info {
+  float:left;
+  margin-left:1rem
+}
+
+#chess-moves {
+  clear:both;
+  padding-top:1rem;
+  margin:1rem;
+}
+
+#GameBoard {
+  border: 1px solid #888;
+}
+
+#GameBoard img {
+  width: 6vmin;
+  height: 6vmin;
+}
+
+#GameSelector {
+  margin-bottom:1rem;
+}

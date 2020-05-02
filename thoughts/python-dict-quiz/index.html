@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="David Wyde">
+   <title>Python dict Quiz | David Wyde</title>
+
+   <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/css/screen.css" media="screen">
+   
+   <link rel="stylesheet" href="/static/css/syntax.css" media="screen">
+   
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">David Wyde</a></h1>
+    </header>
+
+    <nav>
+        <a href="/">Thoughts</a>
+        <a href="/projects/">Projects</a>
+        <a href="/chess/">Chess</a>
+        <a href="/about/">About</a>
+    </nav>
+
+    <div id="content">
+    <article>
+        <div id="title">Python dict Quiz</div>
+        <p class="date">2013-12-13</p>
+        <p>What's wrong with the following Python statement?
+How do you undo the damage?</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123</span><span class="p">:</span> <span class="s">'abc'</span><span class="p">}</span></code></pre></figure>
+
+<p>Answer: it clobbers the built-in <code class="highlighter-rouge">dict</code> type with a dictionary instance!</p>
+
+<p>You can restore the original state in a few ways, including:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span><span class="o">.</span><span class="n">__class__</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="nb">type</span><span class="p">({})</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="n">__builtins__</span><span class="o">.</span><span class="nb">dict</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">func_globals</span><span class="o">.</span><span class="n">__class__</span></code></pre></figure>
+
+
+    </article>
+    </div>
+
+  
+
+</body>
+</html>
+
