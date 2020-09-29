@@ -22,6 +22,4 @@ https://davidwyde.com/thoughts/research-papers/
 https://davidwyde.com/thoughts/skydogcon-2012/
 https://davidwyde.com/thoughts/unix-tricks/
 https://davidwyde.com/thoughts/under-the-ctf/
-https://davidwyde.com/chess/
-https://davidwyde.com/chess/games/
 https://davidwyde.com/about/

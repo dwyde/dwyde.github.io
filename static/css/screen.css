@@ -217,32 +217,3 @@ article h1 code {
   margin-bottom: 2rem;
 }
 
-/* Chess styles */
-#chess-board {
-  float:left;
-  margin-left:1rem;
-}
-
-#chess-info {
-  float:left;
-  margin-left:1rem
-}
-
-#chess-moves {
-  clear:both;
-  padding-top:1rem;
-  margin:1rem;
-}
-
-#GameBoard {
-  border: 1px solid #888;
-}
-
-#GameBoard img {
-  width: 6vmin;
-  height: 6vmin;
-}
-
-#GameSelector {
-  margin-bottom:1rem;
-}
