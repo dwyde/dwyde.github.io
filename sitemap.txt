@@ -18,6 +18,7 @@ https://davidwyde.com/thoughts/intro-programming-outline/
 https://davidwyde.com/thoughts/star-wars-puns/
 https://davidwyde.com/thoughts/python-dict-quiz/
 https://davidwyde.com/thoughts/python-slots/
+https://davidwyde.com/thoughts/research-papers/
 https://davidwyde.com/thoughts/skydogcon-2012/
 https://davidwyde.com/thoughts/unix-tricks/
 https://davidwyde.com/thoughts/under-the-ctf/

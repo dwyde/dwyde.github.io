@@ -62,8 +62,9 @@ article {
     max-width: 100rem;
 }
 
-article h1 {
+article h1, article a[name*="a"] {
   color: #0084c5;
+  text-decoration:none;
 }
 
 #title {
