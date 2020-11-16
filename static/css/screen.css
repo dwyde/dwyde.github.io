@@ -6,13 +6,16 @@ body {
   font-family:serif;
   background:#fff;
   margin:0;
+  font-size:2vmin;
 }
 
-body * {
+article h1 {
+  font-size: 2vmin;
+}
+
+div, p {
   line-height:120%;
-  font-size:2.5vmin;
 }
-
 
 header {
   font-family:monospace;
@@ -39,7 +42,7 @@ nav {
 }
 
 nav a {
-  font-size: 2.2vmin;
+  font-size: 1.8vmin;
   color:#fff;
   border-bottom:1px dashed white;
   margin: 0 2rem;
@@ -142,7 +145,7 @@ ul.posts li span {
 }
 
 /* Software blogs */
-code, code * {
+code {
   font-family:monospace;
   font-size: 80%;
   background-color:#f3f3f3;
@@ -161,6 +164,7 @@ iframe {
   margin-top: 1rem;
   width: 48rem;
   height: 27rem;
+  border: 1px solid #888;
 }
 
 code.python {
@@ -216,4 +220,3 @@ article h1 code {
   max-width: 450px;
   margin-bottom: 2rem;
 }
-
