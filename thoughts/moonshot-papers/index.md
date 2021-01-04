@@ -48,7 +48,7 @@ Kurt G&ouml;del's incompleteness theorems are based on an undecidable sentence, 
 One way to bypass the liar paradox and G&ouml;del's incompleteness theorems is to have the negation
 of a self-referential sentence refer to the new sentence (itself) rather than to the original statement.
 
-With this approach, the negation of the liar sentence is "this sentence is true", which resolves
+With this approach, the negation of the liar sentence is "this sentence is true," which resolves
 the paradox. A similar analysis applies to G&ouml;del's undecidable sentence.
 
 
