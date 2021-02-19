@@ -113,8 +113,12 @@ p, ul, ol {
   margin: 1rem 0;
 }
 
-ul, ol {
+ul {
   margin-left:2.5rem;
+}
+
+ol {
+  margin-left:3.5rem;
 }
 
 div.quotation {
