@@ -9,20 +9,20 @@ Unlike the liar paradox, Curry's paradox does not directly use negation (<a href
 
 I have two observations about Curry's paradox:
 
-1. Its negation is true.
 1. It is equivalent to the liar paradox.
+1. Its negation is the truth-teller sentence.
 
 Both points require that the negation of a self-referential sentence refers to the new sentence (itself) rather than to the original one, which I have <a href="/thoughts/moonshot-papers/#negation" title="Two Ways to Negate Self-Referential Sentences">previously discussed</a> for the liar paradox and G&ouml;del's incompleteness theorems.
 
 # Negating Curry's Paradox
-Curry's paradox features implications of the form *p &rarr; q*, where *p* is "This sentence is true" and *q* is a false proposition. The negation of such an implication is *p &and; &not;q*. Taking the example from earlier, we have "This sentence is true and Germany does not border China," which is true.
+Curry's paradox features implications of the form *p &rarr; q*, where *p* is "This sentence is true" and *q* is a false proposition. The negation of such an implication is *p &and; &not;q*. Taking the example from earlier, we have "This sentence is true and Germany does not border China." The second part of the sentence is true, so we're left with "This sentence is true."
 
 # Equivalence to the Liar Paradox
 *p &rarr; q* is logically equivalent to *&not;p &or; q*. Curry's paradox uses a false *q*, so
 *&not;p &or; q* reduces to *&not;p*. The negation of "This sentence is true" is "This sentence is false," which is the liar paradox.
 
 # Validity Curry
-In their paper "Two flavors of Curry's paradox," Beall and Murzi give a variant of Curry's paradox called v-Curry, where "v" stands for "validity". An example version is "The argument from me to absurdity is valid." Its negation, "The argument from me to absurdity is not valid," is true.
+In their paper "Two flavors of Curry's paradox," Beall and Murzi give a variant of Curry's paradox called v-Curry, where "v" stands for "validity". An example version is "The argument from me to absurdity is valid." Its negation, "The argument from me to absurdity is not valid," is a truth-teller sentence.
 
 # Conclusion
-A different way of negating self-referential sentences resolves two forms of Curry's paradox.
+A different way of negating self-referential sentences reduces two forms of Curry's paradox to liar and truth-teller sentences.
