@@ -15,6 +15,7 @@ https://davidwyde.com/projects/tricycle/
 https://davidwyde.com/thoughts/color-puns/
 https://davidwyde.com/thoughts/curry/
 https://davidwyde.com/thoughts/defcon-22/
+https://davidwyde.com/thoughts/halting/
 https://davidwyde.com/thoughts/intro-programming-outline/
 https://davidwyde.com/thoughts/moonshot-papers/
 https://davidwyde.com/thoughts/python-dict-quiz/
