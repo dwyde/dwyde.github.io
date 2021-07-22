@@ -6,11 +6,11 @@ body {
   font-family:serif;
   background:#fff;
   margin:0;
-  font-size:calc(1em + 1vmin);
+  font-size:calc(1rem + 1vmin);
 }
 
 article h1 {
-  font-size: calc(.65em + 1vmin);
+  font-size: calc(1rem + 1vmin);
 }
 
 div, p {
@@ -224,4 +224,13 @@ article h1 code {
   width:24rem;
   max-width: 450px;
   margin-bottom: 2rem;
+}
+
+table, th, td {
+  border: 1px solid #000;
+}
+
+td {
+  padding: 0.5rem;
+  text-align:center;
 }
