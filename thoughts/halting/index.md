@@ -80,7 +80,7 @@ problem is undecidable applies to these latter two versions of `halts`.
 
 # Notes
 Eric Hehner and Bill Stoddart have raised similar questions in the past. I wrote
-a [longer paper](/docs/wyde-halting.pdf) on the halting problem that
+a [longer paper](/thoughts/halting-proofs-demos/) on the halting problem that
 looked at Turing's work on the topic, including an incomplete proof of the
 `if-else` case in the last paper that he published.
 

@@ -11,7 +11,7 @@ layout: default
 A self-referential sentence, when negated or joined with another sentence, should refer to the new sentence (itself) rather than the original one. Thus, the liar and the truth-teller are negations of each other. This paper uses a classical logic based on the above approach to examine the liar, Curry's paradox, and related topics.
 
 # Notes
-This paper extends my [earlier paper](/thoughts/moonshot-papers/#negation) on
+This paper extends my [earlier paper](/thoughts/negation/) on
 the liar, the truth-teller, and G&ouml;del's incompleteness theorems. It also incorporates
 my previous post on Curry's paradox.
 
