@@ -23,6 +23,7 @@ https://davidwyde.com/thoughts/negation/
 https://davidwyde.com/thoughts/prop-bool-func/
 https://davidwyde.com/thoughts/python-dict-quiz/
 https://davidwyde.com/thoughts/python-slots/
+https://davidwyde.com/thoughts/quantum-bell/
 https://davidwyde.com/thoughts/quantum-local-realism/
 https://davidwyde.com/thoughts/self-reference/
 https://davidwyde.com/thoughts/skydogcon-2012/
