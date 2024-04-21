@@ -97,7 +97,7 @@ even when they are far away from each other.
 
 An alternative view is
 [superdeterminism](https://en.wikipedia.org/wiki/Superdeterminism),
-which says that the angle of one flipper and the result of heads or tails at
+which says that the angle of one flipper and a coin landing heads or tails at
 the other flipper are caused by a common event in their past. Many people
 seem to think that this means there is no
 [free will](https://doi.org/10.3389/fphy.2020.00139),
@@ -105,7 +105,7 @@ and reject the idea based on that, rather than on whether they
 think that kind of correlation makes any sense on its own. A related view to
 superdeterminism is
 [retrocausality](https://plato.stanford.edu/entries/bell-theorem/#OptiLeftOpenExpeViolBellIneq),
-the idea is that the future causes the past.
+the idea that the future causes the past.
 
 It seems that these coin flips are quite tricky to explain.
 
