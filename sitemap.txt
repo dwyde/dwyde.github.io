@@ -12,6 +12,7 @@ https://davidwyde.com/projects/python-puzzles/
 https://davidwyde.com/projects/selfie/
 https://davidwyde.com/projects/training-wheels/
 https://davidwyde.com/projects/tricycle/
+https://davidwyde.com/thoughts/bell-amplitudes/
 https://davidwyde.com/thoughts/color-puns/
 https://davidwyde.com/thoughts/defcon-22/
 https://davidwyde.com/thoughts/diagonal/
